@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+
+        title Art Club HKUSU
+
+        link(rel='icon', type='image/x-icon', href='assets/logo.png')
+
+        include includes/css.pug
+
+    body
+
+        include includes/navbar.pug
+
+        // Page Header
+        header.masthead(style="background-image: url('assets/img/about-bg.jpg')")
+            .container.position-relative.px-4.px-lg-5
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-md-10.col-lg-8.col-xl-7
+                        .page-heading
+                            h1 Gallery
+                            span.subheading Photo Gallery of Events and functions of 2021-2022
+        
+        main.mb-4
+            .container.px-4.px-lg-5
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .gallery#gallery
+                        .gallery-item
+                            .content
+                                img(src='assets/posts/iridescence/Angie.png', alt='Angie, Chairperson')
+                        .gallery-item
+                            .content
+                                img(src='assets/posts/iridescence/Crystal.png', alt='Crystal, IV')
+                        .gallery-item
+                            .content
+                                img(src='assets/posts/iridescence/Iris.png', alt='Iris, Pub&Pro')
+                        .gallery-item
+                            .content
+                                img(src='assets/posts/iridescence/Ivan.png', alt='Ivan, Fin&Pub')
+                        .gallery-item
+                            .content
+                                img(src='assets/posts/iridescence/Miriam.png', alt='Miriam, EV')
+                        .gallery-item
+                            .content
+                                img(src='assets/posts/iridescence/Nicholas.png', alt='Nicholas')
+                        .gallery-item
+                            .content
+                                img(src='assets/posts/iridescence/Summer.png', alt='Summer')
+                        .gallery-item
+                            .content
+                                img(src='assets/posts/iridescence/Victoria.png', alt='Victoria')
+                        
+
+
+        include includes/footer.pug
+
+        include includes/scripts.pug
+
+        script(src='js/gallery.js')
