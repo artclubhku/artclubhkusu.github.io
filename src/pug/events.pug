@@ -19,7 +19,7 @@ html(lang='en')
         include includes/navbar.pug
 
         // Page Header
-        header.masthead(style="background-image: url('assets/img/about-bg.jpg')")
+        header.masthead(style="background-image: url('assets/img/events-bg.jpg')")
             .container.position-relative.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-center
                     .col-md-10.col-lg-8.col-xl-7
@@ -27,20 +27,30 @@ html(lang='en')
                             h1 Events
                             span.subheading Events and functions of 2021-2022
         
+        include includes/posts-data.pug
+
+        - var postCount = 0
+
         main.mb-4
             .container.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-center
                     .timeline
-                        .timeline-container.left
-                            a(href='post-iridescence.html')
-                                .timeline-content.outlined
-                                    h2 Registration Day
-                                    p 15 Aug - 17 Aug
-                        .timeline-container.right
-                            a(href='post-oil-painting.html')
-                                .timeline-content.outlined
-                                    h2 Oil Painting Workshop
-                                    p 29 Sep, 6 Oct, 13 Oct
+                        each post in posts
+                            if post.eventDate
+                                - postCount = postCount + 1
+                                if postCount % 2 == 0
+                                    .timeline-container.left
+                                        a(href=post.link+'.html')
+                                            .timeline-content.outlined
+                                                h2 #{post.title}
+                                                p #{post.eventDate}
+                                
+                                if postCount % 2 != 0
+                                    .timeline-container.right
+                                        a(href=post.link+'.html')
+                                            .timeline-content.outlined
+                                                h2 #{post.title}
+                                                p #{post.eventDate}
 
 
         include includes/footer.pug

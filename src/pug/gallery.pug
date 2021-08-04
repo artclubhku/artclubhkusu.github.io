@@ -31,32 +31,19 @@ html(lang='en')
             .container.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-center
                     .gallery#gallery
-                        .gallery-item
-                            .content
-                                img(src='assets/posts/iridescence/Angie.png', alt='Angie, Chairperson')
-                        .gallery-item
-                            .content
-                                img(src='assets/posts/iridescence/Crystal.png', alt='Crystal, IV')
-                        .gallery-item
-                            .content
-                                img(src='assets/posts/iridescence/Iris.png', alt='Iris, Pub&Pro')
-                        .gallery-item
-                            .content
-                                img(src='assets/posts/iridescence/Ivan.png', alt='Ivan, Fin&Pub')
-                        .gallery-item
-                            .content
-                                img(src='assets/posts/iridescence/Miriam.png', alt='Miriam, EV')
-                        .gallery-item
-                            .content
-                                img(src='assets/posts/iridescence/Nicholas.png', alt='Nicholas')
-                        .gallery-item
-                            .content
-                                img(src='assets/posts/iridescence/Summer.png', alt='Summer')
-                        .gallery-item
-                            .content
-                                img(src='assets/posts/iridescence/Victoria.png', alt='Victoria')
-                        
 
+                        mixin getGalleryItem(folder, subFolder, file, alt='alt text')
+                            .gallery-item
+                                .content
+                                    img(src='assets/'+folder+'/'+subFolder+'/'+file, alt=alt)
+                        
+                        include includes/images.pug
+
+                        each item in files
+                            if item.name == "posts"
+                                each post in item.children
+                                    each file in post.children
+                                        +getGalleryItem(item.name, post.name, file.name)
 
         include includes/footer.pug
 

@@ -7,7 +7,7 @@ html(lang='en')
 
     - var post = null
     each tmpPost in posts
-        if tmpPost.link == 'post-iridescence'
+        if tmpPost.link == 'post-reg-day'
             - post = tmpPost
 
     head
@@ -44,10 +44,11 @@ html(lang='en')
             .container.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-center
                     .col-md-10.col-lg-8.col-xl-7
-                        each paragraph in post.content
-                            p
-                                | #{paragraph}
-                            
+                        if post.content
+                            each paragraph in post.content
+                                p
+                                    | #{paragraph}
+                        
                         each item in files
                             if item.name == "posts"
                                 each imgDir in item.children
