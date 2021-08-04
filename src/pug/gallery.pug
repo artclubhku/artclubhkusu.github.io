@@ -44,9 +44,9 @@ html(lang='en')
                                 each post in item.children
                                     each file in post.children
                                         +getGalleryItem(item.name, post.name, file.name)
+                    
+                    script(src='js/gallery.js')
 
         include includes/footer.pug
 
         include includes/scripts.pug
-
-        script(src='js/gallery.js')
