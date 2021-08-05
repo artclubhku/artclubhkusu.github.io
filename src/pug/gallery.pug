@@ -30,6 +30,9 @@ html(lang='en')
         main.mb-4
             .container.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-center
+                    .col-md-10.col-lg-8.col-xl-7
+                        p More Events Coming Soon!
+                .row.gx-4.gx-lg-5.justify-content-center
                     .gallery#gallery
 
                         mixin getGalleryItem(folder, subFolder, file, alt='alt text')
@@ -46,7 +49,9 @@ html(lang='en')
                                         +getGalleryItem(item.name, post.name, file.name)
                     
                     script(src='js/gallery.js')
-
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-md-10.col-lg-8.col-xl-7
+                        p * Press F5 to reload page if you don't see any images :)
         include includes/footer.pug
 
         include includes/scripts.pug
