@@ -13,13 +13,17 @@ var resizeAll = function () {
 
 gallery.querySelectorAll('img').forEach(function (item) {
     item.classList.add('byebye');
-    item.addEventListener('load', function () {
-        var altura = getVal(gallery, 'grid-auto-rows');
-        var gap = getVal(gallery, 'grid-row-gap');
-        var gitem = item.parentElement.parentElement;
-        gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-        item.classList.remove('byebye');
-    });
+    // item.addEventListener('load', function () {
+    //     var altura = getVal(gallery, 'grid-auto-rows');
+    //     var gap = getVal(gallery, 'grid-row-gap');
+    //     var gitem = item.parentElement.parentElement;
+    //     gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+    //     item.classList.remove('byebye');
+    // });
+    var altura = getVal(gallery, 'grid-auto-rows');
+    var gap = getVal(gallery, 'grid-row-gap');
+    var gitem = item.parentElement.parentElement;
+    gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
 });
 
 window.addEventListener('resize', resizeAll);
