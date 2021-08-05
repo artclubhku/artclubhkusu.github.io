@@ -55,6 +55,8 @@ html(lang='en')
                             br
                         if post.content
                             each paragraph in post.content
+                                if paragraph == ''
+                                    br
                                 p
                                     | #{paragraph}
                         
