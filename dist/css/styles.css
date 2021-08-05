@@ -10583,6 +10583,12 @@ blockquote {
   color: #6c757d;
 }
 
+.centerize {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .btn {
   letter-spacing: 0.0625em;
 }

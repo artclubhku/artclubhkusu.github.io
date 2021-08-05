@@ -29,3 +29,9 @@ blockquote {
     font-style: italic;
     color: $gray-600;
 }
+
+.centerize {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}

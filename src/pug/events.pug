@@ -43,6 +43,8 @@ html(lang='en')
                                         a(href=post.link+'.html')
                                             .timeline-content.outlined
                                                 h2 #{post.title}
+                                                if post.subtitle
+                                                    p #{post.subtitle}
                                                 p #{post.eventDate}
                                 
                                 if postCount % 2 != 0
@@ -50,6 +52,8 @@ html(lang='en')
                                         a(href=post.link+'.html')
                                             .timeline-content.outlined
                                                 h2 #{post.title}
+                                                if post.subtitle
+                                                    p #{post.subtitle}
                                                 p #{post.eventDate}
 
 

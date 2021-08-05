@@ -7,7 +7,7 @@ html(lang='en')
 
     - var post = null
     each tmpPost in posts
-        if tmpPost.link == 'post-reg-day'
+        if tmpPost.link == 'post-art-jam-thursday'
             - post = tmpPost
 
     head
@@ -25,8 +25,12 @@ html(lang='en')
 
         include includes/navbar.pug
 
-
-        header.masthead(style="background-image: url('assets/posts/"+post.imgDir+"/"+post.banner+"')")
+        if post.banner
+            - var banner = "assets/posts/" + post.imgDir + "/" + post.banner
+        if !post.banner
+            - var banner = "assets/img/post-bg.jpg"
+        
+        header.masthead(style="background-image: url('"+banner+"')")
             .container.position-relative.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-center
                     .col-md-10.col-lg-8.col-xl-7
@@ -44,6 +48,11 @@ html(lang='en')
             .container.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-center
                     .col-md-10.col-lg-8.col-xl-7
+                        if post.poster
+                            a(href='assets/posts/' + post.imgDir + '/' + post.poster)
+                                img.img-fluid(src='assets/posts/' + post.imgDir + '/' + post.poster)
+                                span.caption.text-muted
+                            br
                         if post.content
                             each paragraph in post.content
                                 p
@@ -54,15 +63,27 @@ html(lang='en')
                                 each imgDir in item.children
                                     if imgDir.name == post.imgDir
                                         each file in imgDir.children
-                                            if file.name != post.banner
+                                            if file.name != post.banner && file.name != post.poster
                                                 a(href='assets/posts/'+post.imgDir+'/'+file.name)
                                                     img.img-fluid(src='assets/posts/'+post.imgDir+'/'+file.name)
                                                     span.caption.text-muted
                                                 br
+                        if post.signupLink
+                            if post.signupMessage
+                                p.centerize
+                                    | #{post.signupMessage}
+                            if !post.signupMessage
+                                p.centerize
+                                    | Signup Now!
+                            br
+                            a.centerize(href=post.signupLink)
+                                button.btn.btn-primary.text-uppercase Signup
+                            br
                         
                         p
                             | Post written on #{post.date}
-
+                
+        
         include includes/footer.pug
 
         include includes/scripts.pug
