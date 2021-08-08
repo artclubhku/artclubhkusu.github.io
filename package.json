@@ -1,7 +1,7 @@
 {
-    "title": "Clean Blog",
-    "name": "startbootstrap-clean-blog",
-    "version": "6.0.4",
+    "title": "Art Club HKU",
+    "name": "official-website-for-art-club-hku",
+    "version": "1.0.0",
     "scripts": {
         "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
         "build:assets": "node scripts/build-assets.js",
@@ -21,19 +21,12 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/theme/clean-blog",
-    "bugs": {
-        "url": "https://github.com/StartBootstrap/startbootstrap-clean-blog/issues",
-        "email": "feedback@startbootstrap.com"
-    },
+    "homepage": "https://artclubhkusu.github.io",
     "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (https://davidmiller.io/)"
-    ],
+    "author": "artclubhkusu",
     "repository": {
         "type": "git",
-        "url": "https://github.com/StartBootstrap/startbootstrap-clean-blog.git"
+        "url": "https://github.com/artclubhkusu/artclubhkusu.github.io.git"
     },
     "dependencies": {
         "bootstrap": "5.0.2"
