@@ -1,7 +1,7 @@
 /*!
-* Start Bootstrap - Clean Blog v6.0.4 (https://startbootstrap.com/theme/clean-blog)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
+* Start Bootstrap - Art Club HKU v1.0.0 (https://artclubhkusu.github.io)
+* Copyright 2013-2021 artclubhkusu
+* Licensed under MIT (https://github.com/StartBootstrap/official-website-for-art-club-hku/blob/master/LICENSE)
 */
 window.addEventListener('DOMContentLoaded', () => {
     let scrollPos = 0;
@@ -14,7 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
             if (currentTop > 0 && mainNav.classList.contains('is-fixed')) {
                 mainNav.classList.add('is-visible');
             } else {
-                console.log(123);
                 mainNav.classList.remove('is-visible', 'is-fixed');
             }
         } else {
