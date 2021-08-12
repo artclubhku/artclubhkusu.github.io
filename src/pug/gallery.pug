@@ -45,7 +45,7 @@ html(lang='en')
 
                         each item in files
                             if item.name == "posts"
-                                each post in item.children
+                                each post in item.children.reverse()
                                     each file in post.children
                                         +getGalleryItem(item.name, post.name, file.name)
                     
