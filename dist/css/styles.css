@@ -10839,6 +10839,10 @@ header.masthead .site-heading .h1 {
   z-index: -10;
 }
 
+.coming-soon {
+  color: gainsboro;
+}
+
 /* Container around content */
 .timeline-container {
   padding: 10px 40px;
@@ -10943,7 +10947,7 @@ header.masthead .site-heading .h1 {
   /* Make sure all circles are at the same spot */
   .left::after,
 .right::after {
-    left: 15px;
+    left: 7px;
   }
 
   /* Make all right containers behave like the left ones */

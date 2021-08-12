@@ -36,7 +36,7 @@ html(lang='en')
             .container.px-4.px-lg-5
                 .row.gx-4.gx-lg-5.justify-content-center
                     .timeline
-                        each post in posts
+                        each post in posts.reverse()
                             if post.eventDate
                                 - postCount = postCount + 1
                                 if postCount % 2 == 0
@@ -56,6 +56,28 @@ html(lang='en')
                                                 if post.subtitle
                                                     p #{post.subtitle}
                                                 p #{post.eventDate}
+                        each post in future_posts
+                            if post.eventDate
+                                - postCount = postCount + 1
+                                if postCount % 2 == 0
+                                    .timeline-container.left
+                                        div
+                                            .timeline-content.outlined.coming-soon
+                                                body Coming soon
+                                                h2 #{post.title}
+                                                if post.subtitle
+                                                    p #{post.subtitle}
+                                                p Coming Soon in #{post.eventDate}
+                                
+                                if postCount % 2 != 0
+                                    .timeline-container.right
+                                        div
+                                            .timeline-content.outlined.coming-soon
+                                                body Coming soon
+                                                h2 #{post.title}
+                                                if post.subtitle
+                                                    p #{post.subtitle}
+                                                p Coming Soon in #{post.eventDate}
 
 
         include includes/footer.pug
