@@ -1,57 +1,59 @@
 doctype html
 html(lang='en')
 
-    head
+	head
 
-        meta(charset='utf-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
-        meta(name='author', content='')
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description', content='')
+		meta(name='author', content='')
 
-        title Art Club HKUSU
+		title Art Club HKUSU
 
-        link(rel='icon', type='image/x-icon', href='assets/logo.png')
+		link(rel='icon', type='image/x-icon', href='assets/logo.png')
 
-        include includes/analytics.pug
-        include includes/css.pug
+		include includes/analytics.pug
+		include includes/css.pug
 
-    body
+	body
 
-        include includes/navbar.pug
+		include includes/navbar.pug
 
-        // Page Header
-        header.masthead(style="background-image: url('assets/img/gallery-bg.jpg')")
-            .container.position-relative.px-4.px-lg-5
-                .row.gx-4.gx-lg-5.justify-content-center
-                    .col-md-10.col-lg-8.col-xl-7
-                        .page-heading
-                            h1 Gallery
-                            span.subheading Photo Gallery of Events and functions of 2021-2022
-        
-        main.mb-4
-            .container.px-4.px-lg-5
-                .row.gx-4.gx-lg-5.justify-content-center
-                    .col-md-10.col-lg-8.col-xl-7
-                        p More Events Coming Soon!
-                .row.gx-4.gx-lg-5.justify-content-center
-                    .gallery#gallery
+		// Page Header
+		header.masthead(style="background-image: url('assets/img/gallery-bg.jpg')")
+			.container.position-relative.px-4.px-lg-5
+				.row.gx-4.gx-lg-5.justify-content-center
+					.col-md-10.col-lg-8.col-xl-7
+						.page-heading
+							h1 Gallery
+							span.subheading Photo Gallery of Events and functions of 2021-2022
+		
+		main.mb-4
+			.container.px-4.px-lg-5
+				.row.gx-4.gx-lg-5.justify-content-center
+					.col-md-10.col-lg-8.col-xl-7
+						p More Events Coming Soon!
+				.row.gx-4.gx-lg-5.justify-content-center
+					.gallery#gallery
 
-                        mixin getGalleryItem(folder, subFolder, file, alt='alt text')
-                            .gallery-item
-                                .content
-                                    img(src='assets/'+folder+'/'+subFolder+'/'+file, alt=alt)
-                        
-                        include includes/images.pug
+						mixin getGalleryItem(folder, subFolder, file, alt='alt text')
+							.gallery-item
+								.content
+									img(src='assets/'+folder+'/'+subFolder+'/'+file, alt=alt)
+						
+						include includes/images.pug
 
-                        each item in files
-                            if item.name == "posts"
-                                each post in item.children.reverse()
-                                    each file in post.children
-                                        +getGalleryItem(item.name, post.name, file.name)
-                    
-                    script(src='js/gallery.js')
-                .row.gx-4.gx-lg-5.justify-content-center
-                    .col-md-10.col-lg-8.col-xl-7
-        include includes/footer.pug
+						each item in files
+							if item.name == "posts"
+								if item.children
+									each post in item.children.reverse()
+										if post.children
+											each file in post.children
+												+getGalleryItem(item.name, post.name, file.name)
+					
+					script(src='js/gallery.js')
+				.row.gx-4.gx-lg-5.justify-content-center
+					.col-md-10.col-lg-8.col-xl-7
+		include includes/footer.pug
 
-        include includes/scripts.pug
+		include includes/scripts.pug
