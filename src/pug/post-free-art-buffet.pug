@@ -7,7 +7,7 @@ html(lang='en')
 
     - var post = null
     each tmpPost in posts
-        if tmpPost.link == 'post-reg-day'
+        if tmpPost.link == 'post-free-art-buffet'
             - post = tmpPost
 
     head
@@ -66,7 +66,7 @@ html(lang='en')
                             a.centerize(href=post.signupLink)
                                 button.btn.btn-primary.text-uppercase Signup
                             br
-                        
+                            
                         if post.content
                             each paragraph in post.content
                                 if paragraph == ''
@@ -84,7 +84,7 @@ html(lang='en')
                                                     img.img-fluid(src='assets/posts/'+post.imgDir+'/'+file.name)
                                                     span.caption.text-muted
                                                 br
-
+                        
                         p
                             | Post written on #{post.date}
                 
