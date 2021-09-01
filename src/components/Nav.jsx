@@ -72,7 +72,7 @@ export default class Nav extends Component {
         {/* Navigation */}
         <nav className="navbar navbar-expand-lg navbar-light" id="mainNav">
           <div className="container px-4 px-lg-5">
-            <a className="navbar-brand" href="/">ART CLUB, HKUSU</a>
+            <a className="navbar-brand" href="/">Art Club, HKU</a>
             <button 
               className="navbar-toggler" 
               type="button" 
