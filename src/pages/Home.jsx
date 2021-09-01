@@ -25,11 +25,12 @@ export default class Home extends Component {
 
     dataProvider.getList('posts', {
       pagination: { page: 1 , perPage: 100 }, 
-      sort: { field: 'id', order: 'ASC' }, 
+      sort: { field: 'createdOn', order: 'DESC' },
       filter: {},
     }).then(res => {
-      res.data.sort((post) => post.createdOn).reverse();
-      this.setState({posts: res.data})
+      this.setState({
+        posts: res.data,
+      })
     }).catch(err => {
       console.error(err);
     })

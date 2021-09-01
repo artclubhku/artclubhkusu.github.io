@@ -29,7 +29,10 @@ export default class Events extends Component {
         return keys.indexOf('eventDates') > -1;
       })
       console.debug('filteredPosts', filteredPosts)
-      filteredPosts.sort((post) => post.eventDates[0].date).reverse();
+      // filteredPosts.sort((post) => post.eventDates[0].date).reverse();
+      filteredPosts.sort((a, b) => {
+        return new Date(b.eventDates[0].date) - new Date(a.eventDates[0].date)
+      }).reverse()
       this.setState({posts: filteredPosts})
     }).catch(err => {
       console.error(err);
