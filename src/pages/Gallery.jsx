@@ -35,12 +35,14 @@ export default class Gallery extends Component {
       console.debug('res', res)
       var photos = [];
       res.data.forEach(post => {
-        if (post.poster)
-          photos.push(post.poster.src);
-        if (post.images) {
-          post.images.forEach(image => {
-            photos.push(image.src);
-          })
+        if (post.approved) {
+          if (post.poster)
+            photos.push(post.poster.src);
+          if (post.images) {
+            post.images.forEach(image => {
+              photos.push(image.src);
+            })
+          }
         }
       })
       this.setState({photos: photos}, () => {this.initGallery()});
@@ -72,6 +74,7 @@ export default class Gallery extends Component {
         item.classList.remove('byebye');
       });
     })
+
     gallery.querySelectorAll('.gallery-item').forEach(function (item) {
       item.removeEventListener('click', function () {        
         item.classList.toggle('full');        
