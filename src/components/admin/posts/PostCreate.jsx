@@ -9,12 +9,10 @@ const PostCreate = (props) => (
         <TextInput source="heading" />
         <TextInput source="subHeading"/>
         <ArrayInput source="eventDates">
-            <SimpleFormIterator>
-              <DateInput source="date" />
-            </SimpleFormIterator>
-          </ArrayInput>
-
-        <RichTextInput source="content"/>
+          <SimpleFormIterator>
+            <DateInput source="date" />
+          </SimpleFormIterator>
+        </ArrayInput>
         
         <TextInput source="signupLink" label="Signup Link"/>
         <BooleanInput source="signupActive" defaultValue={true}/>
