@@ -9,12 +9,13 @@ import About from "./pages/About";
 import Events from './pages/Events';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import SEOMetaTags from "./components/SEOMetaTags";
 
 function App() {
   return (
     <div>
       <Router>
-        
+        <SEOMetaTags />
         <Switch>
           <Route path="/admin" exact>
             <Admin />
