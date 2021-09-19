@@ -3,8 +3,7 @@ import { List, Datagrid, TextField, ShowButton, EditButton, BooleanField, DateFi
 import { Button } from '@material-ui/core';
 import ImageEye from '@material-ui/icons/RemoveRedEye';
 
-function PreviewButton(props) {
-  // const record = useRecordContext(props);
+export function PreviewButton(props) {
   const { record } = props;
 
   return (
@@ -22,7 +21,7 @@ function PreviewButton(props) {
 }
 
 const PostList = (props) => (
-  <List {...props}>
+  <List {...props} sort={{ field: 'createdOn', order: 'DESC' }}>
       <Datagrid>
           <TextField source="id" />
           <TextField source="heading" />

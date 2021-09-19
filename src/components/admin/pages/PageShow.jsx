@@ -1,5 +1,5 @@
 import React from 'react';
-import { UrlField, Show, SimpleShowLayout, TextField, ImageField, RichTextField } from 'react-admin';
+import { Show, SimpleShowLayout, TextField, ImageField } from 'react-admin';
 
 const PostShow = (props) => {
   return (

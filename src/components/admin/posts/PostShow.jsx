@@ -1,8 +1,36 @@
-import { Show, SimpleShowLayout, TextField, RichTextField, DateField, ImageField, UrlField, BooleanField, Datagrid, ArrayField } from 'react-admin';
+import {
+  Show, 
+  SimpleShowLayout, 
+  TextField, 
+  RichTextField, 
+  DateField, 
+  ImageField, 
+  UrlField, 
+  BooleanField, 
+  Datagrid, 
+  ArrayField, 
+  TopToolbar, 
+  EditButton 
+} from 'react-admin';
+import { PreviewButton } from './PostList';
+import { makeStyles } from '@material-ui/styles';
 import * as React from "react";
 
+const classes = makeStyles(theme => ({
+  root: {
+    height: '90%'
+  },
+})); 
+
+const PostShowActions = ({ basePath, data, resource }) => (
+  <TopToolbar>
+      <EditButton basePath={basePath} record={data} />
+      <PreviewButton record={data} classes={classes}/>
+  </TopToolbar>
+);
+
 const PostShow = (props) => (
-  <Show {...props}>
+  <Show actions={<PostShowActions />} {...props}>
       <SimpleShowLayout>
           <TextField source="id" />
           <BooleanField source="approved" />

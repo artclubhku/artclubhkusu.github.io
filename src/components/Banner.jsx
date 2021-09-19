@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { dataProvider } from '../providers'; 
 import { formatDate } from '../utils';
 
-export default function Banner({header, subheader, name, post, page}) {
+export default function Banner({post, page}) {
   const [bannerUrl, setBannerUrl] = useState();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function Banner({header, subheader, name, post, page}) {
     if (!bannerUrl && page) {
       setBannerUrl(page.banner.src);
     }
-  })
+  }, [bannerUrl, post, page])
 
   return (
     <React.Fragment>
